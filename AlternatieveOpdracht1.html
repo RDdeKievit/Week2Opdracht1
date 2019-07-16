@@ -1,16 +1,25 @@
 <html>
    <head>   
         <script>
+        // globale variabele; moet buiten startStoplicht()
         var positieLicht = 0;
-
+        
+        /* startStoplicht() bepaalt de positie van het licht
+        & geeft de waarde van de positie mee aan kleurLicht()
+        */
         function startStoplicht(){
             positieLicht = positieLicht - 1;
+
             if(positieLicht < 0){
                 positieLicht = 2;
             }
             kleurLicht(positieLicht);
         }
         
+        /* kleurLicht() kleurt de positie van het licht in de bijbehorende kleur
+        & blijft op de betreffende kleur zolang als de ingestelde tijd
+        & tenslotte activeert hij startStoplicht() weer
+        */
         function kleurLicht(dePositie){
             console.log(dePositie);
             switch(dePositie){

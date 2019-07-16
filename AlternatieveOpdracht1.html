@@ -1,0 +1,80 @@
+<html>
+   <head>   
+        <script>
+        var positieLicht = 0;
+        
+        function startStoplicht(){
+            positieStoplicht();
+        }
+
+        function positieStoplicht(){
+            positieLicht = positieLicht - 1;
+            if(positieLicht < 0){
+                positieLicht = 2;
+            }
+            kleurLicht(positieLicht);
+        }
+        
+        function kleurLicht(dePositie){
+            console.log(dePositie);
+            switch(dePositie){
+                case 0:
+                    lichtrood.style.backgroundColor= "red";
+                    lichtgroen.style.backgroundColor= "white";
+                    lichtoranje.style.backgroundColor= "white";
+                    setTimeout(startStoplicht, 10000);
+                    break;
+                case 1:
+                    lichtrood.style.backgroundColor= "white";
+                    lichtgroen.style.backgroundColor= "white";
+                    lichtoranje.style.backgroundColor= "orange";
+                    setTimeout(startStoplicht, 5000);
+                    break;
+                case 2:
+                    lichtrood.style.backgroundColor= "white";
+                    lichtgroen.style.backgroundColor= "green";
+                    lichtoranje.style.backgroundColor= "white";
+                    setTimeout(startStoplicht, 10000);
+            }        
+        }
+
+        /*function roodLicht(){
+            lichtrood.style.backgroundColor= "red";
+            lichtgroen.style.backgroundColor= "white";
+            lichtoranje.style.backgroundColor= "white";
+            setTimeout(startStoplicht, 2000);
+        }
+        function oranjeLicht(){
+            lichtrood.style.backgroundColor= "white";
+            lichtgroen.style.backgroundColor= "white";
+            lichtoranje.style.backgroundColor= "orange";
+            setTimeout(startStoplicht, 1000);
+        }
+        function groenLicht(){
+            lichtrood.style.backgroundColor= "white";
+            lichtgroen.style.backgroundColor= "green";
+            lichtoranje.style.backgroundColor= "white";
+            setTimeout(startStoplicht, 2000);
+        }
+        */
+        </script>
+        <style>
+        span{
+            display: block;
+            border:2px solid black;
+            height: 40px;
+            width: 40px;
+        }
+       </style>
+    </head>
+    <body>
+    <h2>Stoplicht</h2>
+    <span id=lichtrood></span>
+    <span id=lichtoranje></span>
+    <span id=lichtgroen></span><br>
+
+    <button onclick=startStoplicht()>Start</button>
+  
+    
+    </body>
+</html>
